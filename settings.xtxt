@@ -1,0 +1,12 @@
+>>AUTO	R	B	1	0	1	A	0	Autoconnect
+>>APP0	R	B	1	0	1	A	0	App0 Debug Mode
+>>APP1	R	B	1	0	1	A	0	App1 Debug Mode
+>>WAP	R	S	1	0	32	A	^	Wi-Fi SSID
+>>WPW	R	S	1	0	64	A	^	Wi-Fi Password
+#define STG_DESCRIPTOR_FILE "settings.xtxt"
+#define STG_DEBUG_PRINT 1
+#define STG_TIMESTAMP 1
+#define STG_MAX_NUM_SETTINGS 5
+#define STG_RAM_ARRAY_SIZE 141
+#define STG_MAX_SETTING_NAME_LEN 4
+#define STG_MAX_SETTING_VALUE_LEN 64

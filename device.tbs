@@ -1,0 +1,147 @@
+include "global.tbh"
+
+
+
+sub close_interface_sockets(interface as pl_sock_interfaces)
+    dim f,sock_num_bup as byte
+    dim i as word
+    
+    sock_num_bup=sock.num
+    
+    for f=0 to sock.numofsock-1
+        sock.num=f
+        if sock.currentinterface=interface and sock.statesimple<>PL_SSTS_CLOSED then
+            sock.discard
+        end if
+    next f
+
+    i=sys.timercount
+
+wait_close_interface_sockets:
+    for f=0 to sock.numofsock-1
+        sock.num=f
+        if sock.currentinterface=interface and sock.statesimple<>PL_SSTS_CLOSED and sys.timercount-i<3 and sys.timercount>=i then
+            goto wait_close_interface_sockets
+        end if
+    next f
+
+    sock.num=sock_num_bup
+    
+end sub
+            
+
+sub callback_wln_failure(wln_state as en_wln_status_codes)
+    
+end sub
+        
+sub callback_wln_ok()
+    
+end sub
+
+sub callback_wln_starting_association()
+    
+end sub
+        
+sub callback_wln_pre_buffrq(required_buff_pages as byte)
+    
+end sub
+        
+sub callback_wln_mkey_progress_update(progress as byte)
+    
+end sub
+        
+sub callback_wln_rescan_result(current_rssi as byte, scan_rssi as byte, different_ap as no_yes)
+    
+end sub
+        
+sub callback_wln_rescan_for_better_ap()
+    
+end sub
+
+            
+sub callback_stg_error(byref stg_name_or_num as string,index as byte,status as en_stg_status_codes)
+    
+end sub
+        
+sub callback_stg_pre_get(byref stg_name_or_num as string,index as byte,byref stg_value as string)
+
+	select case stg_name_or_num
+	case "AUTO":
+		'Autoconnect
+		'If no
+		'	Set App0 debugmode and App1 Debug to serial
+		'	Disregard WiFi SSID and Password
+		'	Don't start Wi-Fi
+		'If yes
+		'	Set App0 debugmode and App1 Debug according to the settings provided
+		'	Start WiFi with SSID and Password provided
+		sys.debugprint("Autoconnect mode: " + stg_value + "\r\n")
+	
+	case "APP0":
+		sys.debugprint("App0: " + stg_value + "\r\n")
+			
+	case "APP":
+		sys.debugprint("App1: " + stg_value + "\r\n")	
+		
+	case "WAP":
+		sys.debugprint("WiFi Access Point: " + stg_value + "\r\n")		
+	
+	case "WPW":
+		sys.debugprint("WiFi Password: " + stg_value + "\r\n")		
+	case else:
+		
+	end select
+    
+end sub
+        
+sub callback_stg_post_set(byref stg_name_or_num as string, index as byte,byref stg_value as string)
+    
+end sub
+        
+function callback_stg_vm_read(address as word) as byte
+    
+end function
+        
+sub callback_stg_vm_write(data_to_write as byte, address as word)
+    
+end sub
+sub callback_luis_bt_connected()
+    
+end sub
+        
+sub callback_luis_bt_disconnected()
+    
+end sub
+        
+sub callback_luis_bt_enabled()
+    
+end sub
+        
+sub callback_luis_bt_disabled()
+    
+end sub
+        
+sub callback_luis_buzz_command()
+    
+end sub
+        
+sub callback_dhcp_ok(renew as no_yes, interface as pl_sock_interfaces, byref ip as string, byref gateway_ip as string, byref netmask as string, lease_time as dword)
+    
+end sub
+        
+sub callback_dhcp_failure(interface as pl_sock_interfaces,failure_code as en_dhcp_status_codes)
+    
+end sub
+        
+sub callback_dhcp_pre_clear_ip(interface as pl_sock_interfaces)
+    
+end sub
+        
+sub callback_dhcp_pre_buffrq(required_buff_pages as byte)
+    
+end sub
+        
+sub callback_dhcp_buff_released()
+    
+end sub
+        
