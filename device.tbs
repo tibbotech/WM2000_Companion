@@ -30,34 +30,6 @@ wait_close_interface_sockets:
 end sub
             
 
-sub callback_wln_failure(wln_state as en_wln_status_codes)
-    
-end sub
-        
-sub callback_wln_ok()
-    
-end sub
-
-sub callback_wln_starting_association()
-    
-end sub
-        
-sub callback_wln_pre_buffrq(required_buff_pages as byte)
-    
-end sub
-        
-sub callback_wln_mkey_progress_update(progress as byte)
-    
-end sub
-        
-sub callback_wln_rescan_result(current_rssi as byte, scan_rssi as byte, different_ap as no_yes)
-    
-end sub
-        
-sub callback_wln_rescan_for_better_ap()
-    
-end sub
-
             
 sub callback_stg_error(byref stg_name_or_num as string,index as byte,status as en_stg_status_codes)
     
@@ -67,27 +39,20 @@ sub callback_stg_pre_get(byref stg_name_or_num as string,index as byte,byref stg
 
 	select case stg_name_or_num
 	case "AUTO":
-		'Autoconnect
-		'If no
-		'	Set App0 debugmode and App1 Debug to serial
-		'	Disregard WiFi SSID and Password
-		'	Don't start Wi-Fi
-		'If yes
-		'	Set App0 debugmode and App1 Debug according to the settings provided
-		'	Start WiFi with SSID and Password provided
+		stg_value=wln.autoconnect
 		sys.debugprint("Autoconnect mode: " + stg_value + "\r\n")
-	
 	case "APP0":
-		sys.debugprint("App0: " + stg_value + "\r\n")
-			
-	case "APP":
-		sys.debugprint("App1: " + stg_value + "\r\n")	
-		
+		stg_value=sys.debugmode
+		sys.debugprint("App0: " + stg_value + "\r\n")			
 	case "WAP":
+		stg_value=wln.autoconnectssid
 		sys.debugprint("WiFi Access Point: " + stg_value + "\r\n")		
-	
 	case "WPW":
+		stg_value=wln.autoconnectpassword
 		sys.debugprint("WiFi Password: " + stg_value + "\r\n")		
+	case "DBA":
+		stg_value=sys.defaultapp
+		sys.debugprint("Default Boot App: " + stg_value + "\r\n")		
 	case else:
 		
 	end select
@@ -95,7 +60,25 @@ sub callback_stg_pre_get(byref stg_name_or_num as string,index as byte,byref stg
 end sub
         
 sub callback_stg_post_set(byref stg_name_or_num as string, index as byte,byref stg_value as string)
-    
+    select case stg_name_or_num
+	case "AUTO":
+		wln.autoconnect=stg_value
+		sys.debugprint("Autoconnect mode: " + stg_value + "\r\n")	
+	case "APP0":
+		sys.debugmode=stg_value
+		sys.debugprint("App0: " + stg_value + "\r\n")			
+	case "WAP":
+		wln.autoconnectssid=stg_value
+		sys.debugprint("WiFi Access Point: " + stg_value + "\r\n")		
+	case "WPW":
+		wln.autoconnectpassword=stg_value
+		sys.debugprint("WiFi Password: " + stg_value + "\r\n")		
+	case "DBA":
+		sys.defaultapp=stg_value
+		sys.debugprint("Default Boot App: " + stg_value + "\r\n")		
+	case else:
+		
+	end select
 end sub
         
 function callback_stg_vm_read(address as word) as byte
@@ -122,26 +105,6 @@ sub callback_luis_bt_disabled()
 end sub
         
 sub callback_luis_buzz_command()
-    
-end sub
-        
-sub callback_dhcp_ok(renew as no_yes, interface as pl_sock_interfaces, byref ip as string, byref gateway_ip as string, byref netmask as string, lease_time as dword)
-    
-end sub
-        
-sub callback_dhcp_failure(interface as pl_sock_interfaces,failure_code as en_dhcp_status_codes)
-    
-end sub
-        
-sub callback_dhcp_pre_clear_ip(interface as pl_sock_interfaces)
-    
-end sub
-        
-sub callback_dhcp_pre_buffrq(required_buff_pages as byte)
-    
-end sub
-        
-sub callback_dhcp_buff_released()
     
 end sub
         

@@ -16,13 +16,11 @@ const LUIS_BT_DEVICE_NAME="WM2000_Monitor"
 #define WLN_DO PL_IO_NUM_50
 #define WLN_RST PL_IO_NUM_51
 'INCLUDES------------------------------------------------------------
-include "wln\trunk\wln.tbh"
-include "sock\trunk\sock.tbh"
 includepp "settings.xtxt"
 include "settings\trunk\settings.tbh"
+include "filenum\trunk\filenum.tbh"
 include "libraries\luis.tbh"
 includepp "luis.xtxt"
-include "dhcp\trunk\dhcp.tbh"
 'DECLARATIONS--------------------------------------------------------
 declare interface_ready(MAX_NUM_INTERFACES) as no_yes
 declare sub close_interface_sockets(interface as pl_sock_interfaces)

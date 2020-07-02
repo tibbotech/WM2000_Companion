@@ -1,7 +1,7 @@
 I=GEN;D=General;T=GROUP;
 I=AUTO;T=INT;C=STATIC;D=Autoconnect;O=No/0/Yes/1;xIndex=1;
-I=APP0;T=INT;C=STATIC;D=App0 Debug Mode;O=Wi-Fi/1/Serial/0;xIndex=2;S=AUTO==0?"i":"e";
-I=APP1;T=INT;C=STATIC;D=App1 Debug Mode;O=Wi-Fi/1/Serial/0;xIndex=3;S=AUTO==0?"i":"e";
-I=WAP;T=STRING;D=Wi-Fi SSID;C=EDIT;S=AUTO==0?"i":"e";xIndex=4;
-I=WPW;T=STRING;D=Wi-Fi Password;C=EDIT;S=AUTO==0?"i":"e";xIndex=5;
+I=APP0;T=INT;C=STATIC;D=Debug Mode;O=Wi-Fi/1/Serial/0;xIndex=2;S=AUTO==0?"i":"e";
+I=WAP;T=STRING;D=Wi-Fi SSID;C=EDIT;S=AUTO==0?"i":"e";xIndex=3;
+I=WPW;T=STRING;D=Wi-Fi Password;C=EDIT;S=AUTO==0?"i":"e";xIndex=4;
+I=DBA;T=BYTE;D=Default Boot App;C=STATIC;O=App0/0/App1/1;xIndex=5;
 @@STG_RefPath=settings.xtxt
