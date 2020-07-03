@@ -23,5 +23,4 @@ include "libraries\luis.tbh"
 includepp "luis.xtxt"
 'DECLARATIONS--------------------------------------------------------
 declare interface_ready(MAX_NUM_INTERFACES) as no_yes
-declare sub close_interface_sockets(interface as pl_sock_interfaces)
-declare sub boot()
+declare sub init_stg_ble_luis()
