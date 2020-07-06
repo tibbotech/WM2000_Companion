@@ -1,12 +1,13 @@
 >>AUTO	R	B	1	0	1	A	0	Autoconnect
 >>APP0	R	B	1	0	1	A	0	Debug Mode
->>WAP	R	S	1	0	32	A	^	Wi-Fi SSID
->>WPW	R	S	1	0	64	A	^	Wi-Fi Password
+>>WAP	R	S	1	0	32	A	...	Wi-Fi SSID
+>>WPW	R	S	1	0	64	A	...	Wi-Fi Password
 >>DBA	E	B	1	0	1	A	1	Default Boot App
+>>DOM	R	B	1	0	2	A	0	Domain
 #define STG_DESCRIPTOR_FILE "settings.xtxt"
 #define STG_DEBUG_PRINT 1
 #define STG_TIMESTAMP 1
-#define STG_MAX_NUM_SETTINGS 5
-#define STG_RAM_ARRAY_SIZE 132
+#define STG_MAX_NUM_SETTINGS 6
+#define STG_RAM_ARRAY_SIZE 141
 #define STG_MAX_SETTING_NAME_LEN 4
 #define STG_MAX_SETTING_VALUE_LEN 64
