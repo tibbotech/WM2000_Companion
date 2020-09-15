@@ -3,7 +3,7 @@
 >>WAP	R	S	1	0	32	A	...	Wi-Fi SSID
 >>WPW	R	S	1	0	64	A	...	Wi-Fi Password
 >>DBA	E	B	1	0	1	A	1	Default Boot App
->>DOM	R	B	1	0	2	A	0	Domain
+>>DOM	R	B	1	0	254	A	0	Domain
 #define STG_DESCRIPTOR_FILE "settings.xtxt"
 #define STG_DEBUG_PRINT 1
 #define STG_TIMESTAMP 1

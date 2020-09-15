@@ -2,6 +2,7 @@ include "global.tbh"
 
 sub on_sys_init()
 
+	sys.defaultapp=PL_APP_NUM_0
 	init_stg_ble_luis()
 	
 end sub
@@ -9,7 +10,7 @@ end sub
 sub init_stg_ble_luis()
 
 	dim stg_name as string(STG_MAX_SETTING_NAME_LEN)
-    if stg_start()<>EN_STG_STATUS_OK then 
+    if stg_start_no_init<>EN_STG_STATUS_OK then 
         pat.play("R-R-~",PL_PAT_CANINT)
         sys.halt
     end if

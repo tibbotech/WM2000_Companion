@@ -4,5 +4,5 @@ I=APP0;T=INT;C=STATIC;D=Debug Mode;O=Wi-Fi/1/Serial/0;xIndex=2;S=AUTO==0?"i":"e"
 I=WAP;T=STRING;D=Wi-Fi SSID;C=EDIT;S=AUTO==0?"i":"e";xIndex=3;
 I=WPW;T=STRING;D=Wi-Fi Password;C=EDIT;S=AUTO==0?"i":"e";xIndex=4;
 I=DBA;T=INT;D=Default Boot App;C=STATIC;O=App0/0/App1/1;xIndex=5;
-I=DOM;T=BYTE;D=Domain;C=STATIC;O=US/0/Europe/1/Japan/2;xIndex=6;
+I=DOM;T=BYTE;D=Domain;C=STATIC;O=US/75/Europe/1/Japan/2;xIndex=6;
 @@STG_RefPath=settings.xtxt
