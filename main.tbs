@@ -2,6 +2,7 @@ include "global.tbh"
 
 sub on_sys_init()
 
+	sys.debugprint("DEBUG MODE: " + str(sys.debugmode))
 	init_stg_ble_luis()
 	
 end sub
@@ -38,18 +39,18 @@ sub callback_stg_pre_get(byref stg_name_or_num as string,index as byte,byref stg
 		case "AUTO":
 			stg_value=wln.autoconnect
 			sys.debugprint("Autoconnect mode: " + stg_value + "\r\n")
-		case "APP0":
-			stg_value=sys.debugmode
-			sys.debugprint("App0: " + stg_value + "\r\n")			
+		case "DA":
+			stg_value=sys.defaultapp
+			sys.debugprint("Default Boot App: " + stg_value + "\r\n")		
 		case "WAP":
 			stg_value=wln.autoconnectssid
 			sys.debugprint("WiFi Access Point: " + stg_value + "\r\n")		
 		case "WPW":
 			stg_value=wln.autoconnectpassword
 			sys.debugprint("WiFi Password: " + stg_value + "\r\n")		
-		case "DBA":
-			stg_value=sys.defaultapp
-			sys.debugprint("Default Boot App: " + stg_value + "\r\n")	
+		case "DBM":
+			stg_value=sys.debugmode
+			sys.debugprint("Debug Mode: " + stg_value + "\r\n")
 		case "DOM":
 			stg_value=wln.domain
 			sys.debugprint("Domain: " + stg_value + "\r\n")		
@@ -64,18 +65,18 @@ sub callback_stg_post_set(byref stg_name_or_num as string, index as byte,byref s
 		case "AUTO":
 			wln.autoconnect=stg_value
 			sys.debugprint("Autoconnect mode: " + stg_value + "\r\n")	
-		case "APP0":
-			sys.debugmode=stg_value
-			sys.debugprint("App0: " + stg_value + "\r\n")			
+		case "DA":
+			sys.defaultapp=stg_value
+			sys.debugprint("Default Boot App: " + stg_value + "\r\n")		
 		case "WAP":
 			wln.autoconnectssid=stg_value
 			sys.debugprint("WiFi Access Point: " + stg_value + "\r\n")		
 		case "WPW":
 			wln.autoconnectpassword=stg_value
 			sys.debugprint("WiFi Password: " + stg_value + "\r\n")		
-		case "DBA":
-			sys.defaultapp=stg_value
-			sys.debugprint("Default Boot App: " + stg_value + "\r\n")		
+		case "DBM":
+			sys.debugmode=stg_value
+			sys.debugprint("Debug Mode: " + stg_value + "\r\n")			
 		case "DOM":
 			wln.domain=stg_value
 			sys.debugprint("Domain: " + stg_value + "\r\n")		
