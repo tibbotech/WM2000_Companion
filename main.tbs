@@ -2,7 +2,6 @@ include "global.tbh"
 
 sub on_sys_init()
 
-	sys.defaultapp=PL_APP_NUM_0
 	init_stg_ble_luis()
 	
 end sub
