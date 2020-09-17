@@ -14,10 +14,7 @@ sub init_stg_ble_luis()
         pat.play("R-R-~",PL_PAT_CANINT)
         sys.halt
     end if
-    if stg_check_all(stg_name)<>EN_STG_STATUS_OK then
-		pat.play("R-R-~",PL_PAT_CANINT)
-        sys.halt
-	end if
+	
 	wln.boot(0)
 	bt.name=BT_NAME
     bt.emulation=PL_WLN_BT_EMULATION_MODE_NORDIC

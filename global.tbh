@@ -8,8 +8,8 @@ const MAX_NUM_INTERFACES=4
 const DEVICE_NET_IP = "192.168.1.101"
 const DEVICE_NET_MASK = "255.255.255.0"
 const DEVICE_NET_GATEWAY = "192.168.1.1"
-const BT_NAME="MyBTDevice"
-const LUIS_BT_DEVICE_NAME="WM2000_Monitor"
+const BT_NAME="WM2000 Companion"
+const LUIS_BT_DEVICE_NAME="WM2000 Companion"
 #define WLN_CLK PL_IO_NUM_53
 #define WLN_CS PL_IO_NUM_49
 #define WLN_DI PL_IO_NUM_52

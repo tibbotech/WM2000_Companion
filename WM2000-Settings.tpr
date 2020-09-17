@@ -4,7 +4,7 @@ platform=WM2000
 src_lib_ver=2_01_04
 name=WM2000-Settings.tpr
 output=WM2000-Settings.tpr.tpc
-debug=off
+debug=on
 defines= /dSTG_DEBUG_PRINT=1
 transport=serial
 [address1]
@@ -104,5 +104,6 @@ location=commonlib
 path=luis.xtxt
 type=xtext
 format=LUIS_configurator
+condition=
 locked=no
 location=project
