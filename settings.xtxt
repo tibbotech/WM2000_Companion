@@ -1,5 +1,5 @@
 >>AUTO	R	B	1	0	1	A	0	Autoconnect
->>DA	R	B	1	0	1	A	0	Default App
+>>DA	R	B	1	0	1	A	1	Default App
 >>WAP	R	S	1	0	32	A	...	Wi-Fi SSID
 >>WPW	R	S	1	0	64	A	...	Wi-Fi Password
 >>DBM	E	B	1	0	2	A	0	Debug Mode

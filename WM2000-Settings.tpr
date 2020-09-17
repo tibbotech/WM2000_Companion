@@ -4,9 +4,9 @@ platform=WM2000
 src_lib_ver=2_01_04
 name=WM2000-Settings.tpr
 output=WM2000-Settings.tpr.tpc
-debug=on
+debug=off
 defines= /dSTG_DEBUG_PRINT=1
-transport=udp_winpcap
+transport=serial
 [address1]
 platform=TPP3W(G2)
 transport=udp_broadcast
@@ -18,7 +18,7 @@ address=0.36.119.86.35.13
 [address3]
 platform=WM2000
 transport=serial
-address=COM7
+address=COM30:921600
 [address4]
 platform=WM2000
 transport=udp_winpcap
@@ -104,6 +104,5 @@ location=commonlib
 path=luis.xtxt
 type=xtext
 format=LUIS_configurator
-condition=
 locked=no
 location=project
