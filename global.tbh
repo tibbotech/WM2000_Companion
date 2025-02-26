@@ -17,8 +17,8 @@ const LUIS_BT_DEVICE_NAME="WM2000 Companion"
 #define WLN_RST PL_IO_NUM_51
 'INCLUDES------------------------------------------------------------
 includepp "settings.xtxt"
-include "settings\trunk\settings.tbh"
-include "filenum\trunk\filenum.tbh"
+include "settings\settings.tbh"
+include "filenum\filenum.tbh"
 include "libraries\luis.tbh"
 includepp "luis.xtxt"
 'DECLARATIONS--------------------------------------------------------

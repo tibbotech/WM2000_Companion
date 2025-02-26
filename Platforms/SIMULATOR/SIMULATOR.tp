@@ -1,0 +1,24 @@
+[platform]
+description=TiOS Simulator
+version=SIMULATOR-3.60
+rom=983040
+ram=86784
+codebits=24
+databits=32
+sector=65536
+
+[transport1]
+name=udp_broadcast
+description=Broadcast UDP Transport
+device=taiko.udpdevice
+browsedlg=em202ui.browsedlg
+
+[transport2]
+name=udp_winpcap
+description=WinPCap (non-broadcast) UDP Transport
+device=taiko.winpcapdevice
+browsedlg=em202ui.browsedlg
+
+
+[defineimports]
+import1=../GEN.tp
